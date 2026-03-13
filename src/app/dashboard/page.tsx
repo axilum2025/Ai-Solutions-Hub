@@ -40,14 +40,14 @@ export default async function DashboardPage() {
         <h2 className="mt-10 mb-6 text-xl font-bold text-zinc-900 dark:text-white">Your AI Modules</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: "📢", title: "Marketing AI" },
-            { icon: "⚖️", title: "Legal Guidance" },
-            { icon: "📦", title: "Inventory" },
-            { icon: "📄", title: "Documents" },
-            { icon: "💬", title: "Support" },
-            { icon: "📊", title: "Analytics" },
-            { icon: "🔐", title: "Security" },
-            { icon: "🤖", title: "Automation" },
+            { icon: "📢", title: "Marketing & Growth" },
+            { icon: "⚖️", title: "Legal Advisor" },
+            { icon: "📦", title: "Inventory Tracker" },
+            { icon: "📞", title: "Voice & SMS" },
+            { icon: "✉️", title: "Email Assistant" },
+            { icon: "📊", title: "Data Analyzer" },
+            { icon: "🚚", title: "Logistics & Routes" },
+            { icon: "📄", title: "Documents & e-Sign" },
           ].map((m) => (
             <div key={m.title} className="group cursor-pointer rounded-xl border border-zinc-200 bg-white p-5 transition hover:border-blue-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-700">
               <div className="text-2xl">{m.icon}</div>

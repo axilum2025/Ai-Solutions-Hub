@@ -74,14 +74,14 @@ export default function Home() {
           </div>
           <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: "📢", title: "Marketing AI", desc: "Automated campaigns and content generation" },
-              { icon: "⚖️", title: "Legal Guidance", desc: "AI-powered legal document analysis" },
-              { icon: "📦", title: "Inventory Management", desc: "Smart stock and supply chain optimization" },
-              { icon: "📄", title: "Document Processing", desc: "OCR and intelligent data extraction" },
-              { icon: "💬", title: "Customer Support", desc: "AI chatbots and sentiment analysis" },
-              { icon: "📊", title: "Business Analytics", desc: "Real-time insights and forecasting" },
-              { icon: "🔐", title: "Security Module", desc: "Threat detection and compliance monitoring" },
-              { icon: "🤖", title: "Process Automation", desc: "Workflow automation and optimization" },
+              { icon: "📢", title: "AI Marketing & Growth", desc: "Campaign generation, targeting & analytics" },
+              { icon: "⚖️", title: "AI Legal Advisor", desc: "Contracts, compliance & regulatory guidance" },
+              { icon: "📦", title: "Smart Inventory Tracker", desc: "Demand forecasting & automated reordering" },
+              { icon: "📞", title: "Voice & SMS Support", desc: "24/7 AI support via Twilio integration" },
+              { icon: "✉️", title: "AI Email Assistant", desc: "Campaigns & content with SendGrid" },
+              { icon: "📊", title: "Data Analyzer & Insights", desc: "Analytics, dashboards & predictions" },
+              { icon: "🚚", title: "Logistics & Route Optimizer", desc: "Route planning with Google Maps" },
+              { icon: "📄", title: "Document Automation & e-Sign", desc: "Templates, generation & e-signatures" },
             ].map((m) => (
               <div key={m.title} className="rounded-xl border border-zinc-200 bg-white p-6 transition hover:border-blue-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-blue-700">
                 <div className="text-2xl">{m.icon}</div>
