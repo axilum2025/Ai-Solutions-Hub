@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { LogoIcon } from "./Icons";
+import { useAuth } from "./AuthProvider";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { user, loading, signOut } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -37,9 +39,25 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/signin" className="btn-futuristic rounded-full px-6 py-2 text-sm font-semibold text-white">
-            <span>Sign In</span>
-          </Link>
+          {!loading && (
+            user ? (
+              <div className="flex items-center gap-4">
+                <Link href="/dashboard" className="text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+                  Dashboard
+                </Link>
+                <button
+                  onClick={async () => { await signOut(); window.location.href = "/"; }}
+                  className="rounded-full border border-white/10 px-5 py-2 text-sm font-medium text-zinc-300 transition hover:border-indigo-500/30 hover:bg-white/5"
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <Link href="/signin" className="btn-futuristic rounded-full px-6 py-2 text-sm font-semibold text-white">
+                <span>Sign In</span>
+              </Link>
+            )
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -57,9 +75,21 @@ export default function Navbar() {
             <Link href="/" onClick={() => setOpen(false)} className="text-sm font-medium text-zinc-400 hover:text-white">Home</Link>
             <Link href="/about" onClick={() => setOpen(false)} className="text-sm font-medium text-zinc-400 hover:text-white">About</Link>
             <Link href="/features" onClick={() => setOpen(false)} className="text-sm font-medium text-zinc-400 hover:text-white">Features</Link>
-            <Link href="/signin" onClick={() => setOpen(false)} className="btn-futuristic rounded-full px-5 py-2 text-center text-sm font-medium text-white">
-              <span>Sign In</span>
-            </Link>
+            {user ? (
+              <>
+                <Link href="/dashboard" onClick={() => setOpen(false)} className="text-sm font-medium text-zinc-400 hover:text-white">Dashboard</Link>
+                <button
+                  onClick={async () => { setOpen(false); await signOut(); window.location.href = "/"; }}
+                  className="rounded-full border border-white/10 px-5 py-2 text-center text-sm font-medium text-zinc-300 hover:bg-white/5"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <Link href="/signin" onClick={() => setOpen(false)} className="btn-futuristic rounded-full px-5 py-2 text-center text-sm font-medium text-white">
+                <span>Sign In</span>
+              </Link>
+            )}
           </div>
         </div>
       )}
