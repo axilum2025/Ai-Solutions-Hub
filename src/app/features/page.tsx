@@ -67,43 +67,41 @@ const modules: { Icon: ComponentType<{ className?: string }>; title: string; des
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen bg-[#05050a] text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50/60 via-white to-white py-24">
         <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-purple-500/10 blur-[120px]" />
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
             Powerful <span className="text-gradient">Features</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
+          <p className="mt-6 text-lg leading-8 text-gray-500">
             Explore our comprehensive suite of 8 specialized AI modules designed to transform every aspect of your business operations.
           </p>
         </div>
       </section>
 
       {/* Modules — full detail */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-30" />
-        <div className="relative mx-auto max-w-5xl px-6">
+      <section className="border-t border-gray-100 py-24">
+        <div className="mx-auto max-w-5xl px-6">
           <div className="space-y-8">
             {modules.map((m, i) => (
-              <div key={m.title} className="glass-card glow-border group rounded-2xl p-8 md:p-10 animate-slide-up" style={{ animationDelay: `${i * 80}ms` }}>
+              <div key={m.title} className="card group rounded-2xl p-8 md:p-10 animate-slide-up" style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-500/10 transition group-hover:bg-indigo-500/20">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50 transition group-hover:bg-indigo-100">
                     <m.Icon className="h-8 w-8" />
                   </div>
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">Module {i + 1}</span>
-                    <h3 className="text-xl font-bold text-white">{m.title}</h3>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600">Module {i + 1}</span>
+                    <h3 className="text-xl font-bold text-gray-900">{m.title}</h3>
                   </div>
                 </div>
-                <p className="mt-5 leading-7 text-zinc-400">{m.desc}</p>
-                <p className="mt-3 leading-7 text-zinc-400">{m.longDesc}</p>
+                <p className="mt-5 leading-7 text-gray-500">{m.desc}</p>
+                <p className="mt-3 leading-7 text-gray-500">{m.longDesc}</p>
                 <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                   {m.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-zinc-300">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-500/20 text-xs text-indigo-400">✓</span>
+                    <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs text-indigo-600">✓</span>
                       {f}
                     </li>
                   ))}
@@ -115,9 +113,8 @@ export default function FeaturesPage() {
       </section>
 
       {/* Platform Benefits */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-20" />
-        <div className="relative mx-auto max-w-5xl px-6">
+      <section className="border-t border-gray-100 bg-gray-50/50 py-24">
+        <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-center text-2xl font-bold">
             Platform <span className="text-gradient">Benefits</span>
           </h2>
@@ -130,9 +127,9 @@ export default function FeaturesPage() {
               { Icon: ShieldIcon, text: "Enterprise-grade security and data protection" },
               { Icon: BoltIcon, text: "Regular updates with new AI capabilities and features" },
             ].map((b) => (
-              <div key={b.text} className="glass-card flex items-start gap-3 rounded-xl p-5">
+              <div key={b.text} className="card flex items-start gap-3 rounded-xl p-5">
                 <b.Icon className="mt-0.5 h-6 w-6 shrink-0" />
-                <span className="text-sm leading-6 text-zinc-300">{b.text}</span>
+                <span className="text-sm leading-6 text-gray-600">{b.text}</span>
               </div>
             ))}
           </div>
@@ -140,9 +137,8 @@ export default function FeaturesPage() {
       </section>
 
       {/* Seamless Integration */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-30" />
-        <div className="relative mx-auto max-w-5xl px-6">
+      <section className="border-t border-gray-100 py-24">
+        <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-center text-2xl font-bold">
             Seamless <span className="text-gradient">Integration</span>
           </h2>
@@ -152,12 +148,12 @@ export default function FeaturesPage() {
               { Icon: DataIcon, title: "Analytics", desc: "Comprehensive tracking and insights across all modules and operations" },
               { Icon: GlobeIcon, title: "Unified Platform", desc: "All modules work together seamlessly in one integrated ecosystem" },
             ].map((r) => (
-              <div key={r.title} className="glass-card glow-border rounded-2xl p-8 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-500/10">
+              <div key={r.title} className="card rounded-2xl p-8 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50">
                   <r.Icon className="h-8 w-8" />
                 </div>
-                <h3 className="mt-4 font-semibold text-white">{r.title}</h3>
-                <p className="mt-2 text-sm text-zinc-500">{r.desc}</p>
+                <h3 className="mt-4 font-semibold text-gray-900">{r.title}</h3>
+                <p className="mt-2 text-sm text-gray-500">{r.desc}</p>
               </div>
             ))}
           </div>
@@ -165,21 +161,20 @@ export default function FeaturesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/10 to-transparent" />
-        <div className="absolute inset-0 bg-mesh" />
+      <section className="relative overflow-hidden border-t border-gray-100 py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700" />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">
+          <h2 className="text-3xl font-bold tracking-tight text-white">
             Ready to Get Started?
           </h2>
-          <p className="mt-4 text-lg text-zinc-400">
+          <p className="mt-4 text-lg text-indigo-100">
             Choose your plan and start transforming your business with AI today.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href="/signin" className="btn-futuristic w-full rounded-full px-8 py-3.5 text-sm font-semibold text-white sm:w-auto">
-              <span>Start Free Trial</span>
+            <Link href="/signin" className="w-full rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 sm:w-auto">
+              Start Free Trial
             </Link>
-            <Link href="/about" className="w-full rounded-full border border-white/10 px-8 py-3.5 text-sm font-semibold text-zinc-300 transition hover:border-indigo-500/30 hover:bg-white/5 sm:w-auto">
+            <Link href="/about" className="w-full rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto">
               Learn More
             </Link>
           </div>

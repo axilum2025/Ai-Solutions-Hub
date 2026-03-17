@@ -6,26 +6,25 @@ import {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#05050a] text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50/60 via-white to-white py-24">
         <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-indigo-500/10 blur-[120px]" />
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
             About <span className="text-gradient">AI Solutions Hub</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
+          <p className="mt-6 text-lg leading-8 text-gray-500">
             Empowering businesses with comprehensive AI automation through intelligent technology and innovative solutions.
           </p>
         </div>
       </section>
 
       {/* Platform Overview */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="relative mx-auto max-w-4xl px-6">
+      <section className="border-t border-gray-100 py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-2xl font-bold">Platform <span className="text-gradient">Overview</span></h2>
-          <div className="mt-6 space-y-4 text-zinc-400 leading-7">
+          <div className="mt-6 space-y-4 text-gray-500 leading-7">
             <p>
               AI Solutions Hub is an enterprise-grade AI platform designed to transform business operations through intelligent automation. We combine cutting-edge artificial intelligence with robust infrastructure to deliver 8 specialized modules that address critical business needs.
             </p>
@@ -40,11 +39,10 @@ export default function AboutPage() {
       </section>
 
       {/* AI Router Technology */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-30" />
-        <div className="relative mx-auto max-w-4xl px-6">
+      <section className="border-t border-gray-100 bg-gray-50/50 py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-2xl font-bold">AI Router <span className="text-gradient">Technology</span></h2>
-          <div className="mt-6 space-y-4 text-zinc-400 leading-7">
+          <div className="mt-6 space-y-4 text-gray-500 leading-7">
             <p>
               At the core of our platform lies our proprietary AI Router Technology — an intelligent routing system that automatically selects the optimal AI engine for each task. This multi-engine approach ensures superior performance, cost efficiency, and reliability.
             </p>
@@ -59,9 +57,8 @@ export default function AboutPage() {
       </section>
 
       {/* Platform Architecture */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-40" />
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="border-t border-gray-100 py-24">
+        <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-2xl font-bold">Platform <span className="text-gradient">Architecture</span></h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -70,12 +67,12 @@ export default function AboutPage() {
               { Icon: ShieldIcon, title: "Enterprise Security", desc: "Role-based access control and data encryption" },
               { Icon: GlobeIcon, title: "Edge Computing", desc: "Global edge functions for low-latency responses" },
             ].map((a, i) => (
-              <div key={a.title} className="glass-card glow-border rounded-2xl p-6 text-center animate-slide-up" style={{ animationDelay: `${i * 150}ms` }}>
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-500/10">
+              <div key={a.title} className="card rounded-2xl p-6 text-center animate-slide-up" style={{ animationDelay: `${i * 150}ms` }}>
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-50">
                   <a.Icon className="h-8 w-8" />
                 </div>
-                <h3 className="mt-4 font-semibold text-white">{a.title}</h3>
-                <p className="mt-2 text-sm text-zinc-500">{a.desc}</p>
+                <h3 className="mt-4 font-semibold text-gray-900">{a.title}</h3>
+                <p className="mt-2 text-sm text-gray-500">{a.desc}</p>
               </div>
             ))}
           </div>
@@ -83,10 +80,10 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="relative mx-auto max-w-4xl px-6">
+      <section className="border-t border-gray-100 bg-gray-50/50 py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-2xl font-bold">Technology <span className="text-gradient">Stack</span></h2>
-          <p className="mt-6 text-zinc-400 leading-7">
+          <p className="mt-6 text-gray-500 leading-7">
             Our platform is built on a modern, scalable architecture leveraging Supabase for backend services including PostgreSQL database, real-time subscriptions, authentication, and storage. Edge functions deployed globally ensure low-latency responses regardless of user location. We implement comprehensive security measures including row-level security policies, encrypted data transmission, and role-based access control to protect your sensitive business information.
           </p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -95,13 +92,13 @@ export default function AboutPage() {
               { Icon: GlobeIcon, title: "Global Scale", desc: "Edge network deployment" },
               { Icon: BoltIcon, title: "High Performance", desc: "Real-time processing" },
             ].map((s) => (
-              <div key={s.title} className="glass-card flex items-center gap-4 rounded-xl p-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600/20 to-purple-600/20">
+              <div key={s.title} className="card flex items-center gap-4 rounded-xl p-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-50">
                   <s.Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white">{s.title}</div>
-                  <div className="text-sm text-zinc-500">{s.desc}</div>
+                  <div className="font-semibold text-gray-900">{s.title}</div>
+                  <div className="text-sm text-gray-500">{s.desc}</div>
                 </div>
               </div>
             ))}
@@ -110,13 +107,12 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-mesh opacity-20" />
-        <div className="relative mx-auto max-w-4xl px-6">
+      <section className="border-t border-gray-100 py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <div className="grid gap-12 md:grid-cols-2">
-            <div className="glass-card rounded-2xl p-8">
+            <div className="card rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gradient">Our Mission</h2>
-              <div className="mt-4 space-y-4 text-zinc-400 leading-7">
+              <div className="mt-4 space-y-4 text-gray-500 leading-7">
                 <p>
                   To empower businesses of all sizes with comprehensive AI automation tools that are powerful, accessible, and cost-effective. We believe that advanced AI capabilities should not be limited to large enterprises with extensive technical resources.
                 </p>
@@ -125,9 +121,9 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="glass-card rounded-2xl p-8">
+            <div className="card rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gradient">Our Vision</h2>
-              <div className="mt-4 space-y-4 text-zinc-400 leading-7">
+              <div className="mt-4 space-y-4 text-gray-500 leading-7">
                 <p>
                   To become the leading enterprise AI platform that transforms how businesses operate, enabling unprecedented efficiency, innovation, and growth through intelligent automation.
                 </p>
@@ -141,8 +137,8 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="relative border-t border-white/5 py-24">
-        <div className="relative mx-auto max-w-4xl px-6">
+      <section className="border-t border-gray-100 bg-gray-50/50 py-24">
+        <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-2xl font-bold">Our Core <span className="text-gradient">Principles</span></h2>
           <div className="mt-8 space-y-4">
             {[
@@ -152,9 +148,9 @@ export default function AboutPage() {
               { Icon: ShieldIcon, text: "Reliability with automated failover and monitoring" },
               { Icon: BrainIcon, text: "Accessibility through intuitive interfaces and comprehensive documentation" },
             ].map((p) => (
-              <div key={p.text} className="glass-card flex items-start gap-4 rounded-xl p-5">
+              <div key={p.text} className="card flex items-start gap-4 rounded-xl p-5">
                 <p.Icon className="mt-0.5 h-6 w-6 shrink-0" />
-                <span className="text-zinc-300">{p.text}</span>
+                <span className="text-gray-600">{p.text}</span>
               </div>
             ))}
           </div>
@@ -162,18 +158,17 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden border-t border-white/5 py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/10 to-transparent" />
-        <div className="absolute inset-0 bg-mesh" />
+      <section className="relative overflow-hidden border-t border-gray-100 py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700" />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">
+          <h2 className="text-3xl font-bold tracking-tight text-white">
             Ready to Transform Your Business?
           </h2>
-          <p className="mt-4 text-lg text-zinc-400">
+          <p className="mt-4 text-lg text-indigo-100">
             Join hundreds of businesses leveraging AI to drive growth and efficiency.
           </p>
-          <Link href="/signin" className="btn-futuristic mt-8 inline-block rounded-full px-8 py-3.5 text-sm font-semibold text-white">
-            <span>Get Started Now</span>
+          <Link href="/signin" className="mt-8 inline-block rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">
+            Get Started Now
           </Link>
         </div>
       </section>
